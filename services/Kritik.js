@@ -1,15 +1,4 @@
-import "../model/kritik-model.js";
-
-export const readKritik = async () => {
-    return await Kritik.findAll({
-        attributes: [
-            'name',
-            'kritik',
-        ],
-        limit: 8,
-        raw: true,
-    })
-}
+import Kritik from "../model/kritik-model.js";
 
 export const createKritik = async (name, kritik) =>{
     return await Kritik.create({
@@ -17,3 +6,15 @@ export const createKritik = async (name, kritik) =>{
         kritik,
     })
 }
+
+// export const readKritik = async () => {
+//     return await Kritik.findAll({
+//         attributes: [
+//             'name',
+//             'kritik',
+//         ],
+//         limit: 8,
+//         raw: true,
+//     })
+// }
+
