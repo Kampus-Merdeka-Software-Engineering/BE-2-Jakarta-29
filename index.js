@@ -18,8 +18,8 @@ dotenv.config()
 startSequelize();
 
 app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.raw())
 
-app.use(express.static("views"))
 app.use(cors())
 app.use(bodyParser.json())
 
