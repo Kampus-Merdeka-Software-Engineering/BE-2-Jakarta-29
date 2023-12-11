@@ -9,6 +9,6 @@ export const readNewsSocietyTopic = async () => {
 }
 
 export const readNewsRelationTopic = async () => {
-    return await News.findAll({ where: { topics: 'Relationship'}});
+    return await News.findAll({ where: { topics: 'Relationships'}});
 }
 
