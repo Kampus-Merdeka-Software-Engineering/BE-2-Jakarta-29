@@ -8,7 +8,7 @@ import kritikRoutes from "./routes/kritik-routes.js";
 
 import './model/index.js';
 import { startSequelize } from "./utils/startSequelize.js";
-// import { importData } from "./utils/importData.js";
+
 
 
 const app = express()
@@ -18,7 +18,6 @@ dotenv.config()
 
 
 startSequelize();
-// importData();
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.raw())
