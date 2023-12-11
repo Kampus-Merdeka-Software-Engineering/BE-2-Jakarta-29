@@ -7,7 +7,7 @@ const jsonData = fs.readFileSync('news.json', 'utf8')
 const newsData = JSON.parse(jsonData)
 
 // Sync model with Database
-const importData = async () => {
+export const importData = async () => {
     await News.sync({ force: true })
 
     //Simpan data ke database
