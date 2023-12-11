@@ -8,7 +8,7 @@ import kritikRoutes from "./routes/kritik-routes.js";
 
 import './model/index.js';
 import { startSequelize } from "./utils/startSequelize.js";
-import { imortData } from "./utils/imortData.js";
+import { importData } from "./utils/imortData.js";
 
 
 const app = express()
