@@ -8,21 +8,22 @@ import kritikRoutes from "./routes/kritik-routes.js";
 
 import './model/index.js';
 import { startSequelize } from "./utils/startSequelize.js";
-import { importData } from "./utils/importData.js";
+// import { importData } from "./utils/importData.js";
 
 
 const app = express()
+app.use(cors())
 const port = process.env.PORT
 dotenv.config()
 
 
 startSequelize();
-importData();
+// importData();
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.raw())
 
-app.use(cors())
+
 app.use(bodyParser.json())
 
 app.use("/news", newsRoutes)
