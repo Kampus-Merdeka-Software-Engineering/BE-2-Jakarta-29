@@ -1,7 +1,9 @@
 import express from 'express';
 import { readNewsSelfTopic, 
         readNewsSocietyTopic, 
-        readNewsRelationTopic } from '../services/News.js';
+        readNewsRelationTopic,
+        readNewsIndividual,
+        readNewsRandom} from '../services/News.js';
 
 /**
  * 
@@ -37,6 +39,30 @@ export const getSocietyItems = async (request, response) => {
 export const getRelationItems = async (request, response) => {
 
     const newsItems = await readNewsRelationTopic()
+
+    response.status(200).json(newsItems)
+}
+
+/**
+ * 
+ * @param {express.Request} req 
+ * @param {express.Response} res 
+ */
+export const getIndividualItems = async (request, response) => {
+
+    const newsItems = await readNewsIndividual(request.query.id)
+
+    response.status(200).json(newsItems)
+}
+
+/**
+ * 
+ * @param {express.Request} req 
+ * @param {express.Response} res 
+ */
+export const getRandomItems = async (request, response) => {
+
+    const newsItems = await readNewsRandom()
 
     response.status(200).json(newsItems)
 }

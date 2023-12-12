@@ -12,3 +12,10 @@ export const readNewsRelationTopic = async () => {
     return await News.findAll({ where: { topics: 'Relationships'}});
 }
 
+export const readNewsIndividual = async (request) => {
+    return await News.findOne({ where: { id: request}})
+}
+
+export const readNewsRandom = async (request) => {
+    return await News.findAll()
+}
